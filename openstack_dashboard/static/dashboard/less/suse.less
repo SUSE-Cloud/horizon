@@ -274,7 +274,7 @@ td.actions_column .row_actions button.btn.disabled:hover, td.actions_column .row
 }
 
 .table_title h3, .table_header h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 5px;
@@ -311,4 +311,58 @@ td.actions_column .row_actions button.btn.disabled:hover, td.actions_column .row
 
 .dropdown-menu .btn.btn-danger {
 color: #ff6600;
+}
+
+/* Login Splash Page */
+
+#splash {
+  background: #fff;
+}
+
+#splash .login {
+  background: #fff url(/static/dashboard/img/susecloud-openstack-vert.png) no-repeat left;
+  background-position: 10px 5px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin: 0 0 0 -195px;
+  padding-top: 40px;
+  width: 390px;
+  border: 1px solid #ccc;
+  max-height: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+
+  h3 {
+    display: none;
+  }
+
+  .modal-header {
+    padding: 10px 15px;
+    border-bottom: none;
+  }
+
+  .modal-body {
+    background: #fff;
+    padding-top: 25px;
+  }
+
+  form {
+    .error {
+      width: 100%;
+    }
+    input {
+      width: 350px;
+    }
+    select {
+      width: 360px;
+    }
+  }
 }
