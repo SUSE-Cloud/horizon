@@ -71,7 +71,7 @@
       <div id="links">
         {% block links %}
         <p><a href="/">{% trans "Home" %}</a></p>
-        <p><a href="{{ HORIZON_CONFIG.help_url }}">{% trans "Help" %}</a></p>
+        <p><a href="{% url 'horizon:help:guides:index' %}">{% trans "Help" %}</a></p>
         {% endblock %}
       </div>
     </div>
