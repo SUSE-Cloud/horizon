@@ -23,6 +23,7 @@ class Help(horizon.Dashboard):
     panels = ('guides',)
     default_panel = 'guides'
     nav = False
+    public = True
 
 
 horizon.register(Help)
