@@ -73,7 +73,7 @@ STATIC_URL = '/static/'
 ROOT_URLCONF = 'openstack_dashboard.urls'
 
 HORIZON_CONFIG = {
-    'dashboards': ('project', 'admin', 'router', 'help',),
+    'dashboards': ('project', 'admin', 'router',),
     'default_dashboard': 'project',
     'user_home': 'openstack_dashboard.views.get_user_home',
     'ajax_queue_limit': 10,
@@ -214,7 +214,6 @@ COMPRESS_PARSER = 'compressor.parser.HtmlParser'
 
 INSTALLED_APPS = [
     'openstack_dashboard',
-    'openstack_dashboard.dashboards.help',
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.sessions',
