@@ -33,6 +33,4 @@ def splash(request):
     if request.user.is_authenticated():
         return shortcuts.redirect(get_user_home(request.user))
     form = forms.Login(request)
-    request.session.clear()
-    request.session.set_test_cookie()
     return shortcuts.render(request, 'splash.html', {'form': form})

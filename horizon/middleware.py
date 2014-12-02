@@ -49,6 +49,17 @@ class HorizonMiddleware(object):
 
     def process_request(self, request):
         """ Adds data necessary for Horizon to function to the request. """
+
+        request.horizon = {'dashboard': None,
+                           'panel': None,
+                           'async_messages': []}
+        if not hasattr(request, "user") or not request.user.is_authenticated():
+            # proceed no further if the current request is already known
+            # not to be authenticated
+            # it is CRITICAL to perform this check as early as possible
+            # to avoid creating too many sessions
+            return None
+
         # Activate timezone handling
         tz = request.session.get('django_timezone')
         if tz:
@@ -62,9 +73,7 @@ class HorizonMiddleware(object):
 
         last_activity = request.session.get('last_activity', None)
         timestamp = int(time.time())
-        request.horizon = {'dashboard': None,
-                           'panel': None,
-                           'async_messages': []}
+
         if (isinstance(last_activity, int)
                 and (timestamp - last_activity) > timeout):
             request.session.pop('last_activity')
