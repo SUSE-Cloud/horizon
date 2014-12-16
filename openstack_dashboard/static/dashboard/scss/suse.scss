@@ -1,10 +1,11 @@
 @import "horizon.scss";
 
-body { background-color: #f5f5f5;}
+body { background: #f5f5f5;}
 
 .topbar { 
   background: #383c3e; 
   border-bottom: 1px solid #000;
+  box-shadow: #666 1px 1px 3px;
   #user_info > a {
     color: #d7d7d7;
   }
@@ -20,10 +21,10 @@ body { background-color: #f5f5f5;}
   }
 }
 .sidebar {
-  border-width: 0 1px 1px 0;
-  border-color: #0b0b0b;
+  border-width: 0 2px 2px 0;
+  border-color: #0b0e0c;
   border-style: solid;
-  border-radius: 0;
+  box-shadow: #999 1px 1px 3px;
   h4 { margin-left: 0px }
 }
 .nav_accordion {
@@ -58,7 +59,8 @@ body { background-color: #f5f5f5;}
       background-position: 23px;
       background-color: #252829;
       background-image: url(/static/dashboard/img/right_droparrow-light.png);
-      border: none; 
+      border: none;
+      border-top: 1px solid #383c3e; 
       padding-left: 25px;
       max-width: 100%;
       div { color: #d7d7d7; }
@@ -66,7 +68,7 @@ body { background-color: #f5f5f5;}
     h4.active { 
       background-color: #252829;
       background-position: 20px;
-      border-bottom-color: #171819;
+      border-bottom-color: #000;
       padding-left: 25px;
       background-image: url(/static/dashboard/img/drop_arrow-light.png);
       div { color: #7ac142; } 
@@ -79,8 +81,10 @@ body { background-color: #f5f5f5;}
     li a { padding-left: 35px; width: 236px;}
     li a.active {
       color: #7ac142;
-      background-color: #000;
+      background-color: #111;
       border: none;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #222;
       margin-left: 0px;
       padding-left: 55px;
       width: 100%;
@@ -100,22 +104,44 @@ body { background-color: #f5f5f5;}
     font-size: 10px;
   }
 }
+
+html, body {
+  height: 100%;
+}
+
 #splash {
+  @include gradient-horizontal(#1fad7a, #80c235);
   .login {
-    background-color: #7ac142;
-    border: 2px solid  #fff;
+    background-color: #252829;
+    width: 300px;
+    border: 1px solid  #333;
+    top: auto;
+    left: auto;
+    position: static;
+    margin: 0px;
+    margin-bottom: 120px;
+    @include center-block;
+    border-radius: 0px 0px 8px 8px;
   }
   .modal-header {
     border: none;
-    h3 {
-      color: #fff;
-    }
+    padding: 0;
+    min-height: 0;
   }
   .modal-body {
-    background-color : #fff;
+    background-color: #252829;
+    color: #fff;
+    label { color: #fff; font-weight: normal }
   }
+  .btn-primary {
+    background-color: #00b268;
+    color: #fff;
+    width: 100%;
+    border-color: transparent;
+}
   .modal-footer {
     border: none;
+    padding-top: 0px;
   }
 }
 
